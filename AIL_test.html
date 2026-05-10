@@ -100,22 +100,27 @@
         <p id="q-text" class="title-text text-gray-800 mb-10 flex-grow">질문 내용이 여기에 들어갑니다.</p>
 
         <!-- 선택 버튼들 -->
-        <div class="flex flex-col space-y-4">
-            <button onclick="selectAnswer(5)"
-                class="text-left w-full bg-gray-50 hover:bg-blue-50 border-2 border-gray-200 hover:border-ansan rounded-xl py-5 px-6 btn-text transition-colors text-gray-800">5.
-                매우 그렇다</button>
-            <button onclick="selectAnswer(4)"
-                class="text-left w-full bg-gray-50 hover:bg-blue-50 border-2 border-gray-200 hover:border-ansan rounded-xl py-5 px-6 btn-text transition-colors text-gray-800">4.
-                대개 그렇다</button>
-            <button onclick="selectAnswer(3)"
-                class="text-left w-full bg-gray-50 hover:bg-blue-50 border-2 border-gray-200 hover:border-ansan rounded-xl py-5 px-6 btn-text transition-colors text-gray-800">3.
-                보통이다</button>
-            <button onclick="selectAnswer(2)"
-                class="text-left w-full bg-gray-50 hover:bg-blue-50 border-2 border-gray-200 hover:border-ansan rounded-xl py-5 px-6 btn-text transition-colors text-gray-800">2.
-                별로 그렇지 않다</button>
+        <div class="flex flex-col gap-3 w-full">
             <button onclick="selectAnswer(1)"
-                class="text-left w-full bg-gray-50 hover:bg-blue-50 border-2 border-gray-200 hover:border-ansan rounded-xl py-5 px-6 btn-text transition-colors text-gray-800">1.
-                전혀 그렇지 않다</button>
+                class="w-full bg-gray-50 hover:bg-blue-50 border-2 border-gray-200 hover:border-ansan rounded-xl py-4 px-4 transition-colors text-gray-800 text-center break-keep flex items-center justify-center">
+                <span class="text-lg md:text-xl font-medium">1. 전혀 그렇지 않다</span>
+            </button>
+            <button onclick="selectAnswer(2)"
+                class="w-full bg-gray-50 hover:bg-blue-50 border-2 border-gray-200 hover:border-ansan rounded-xl py-4 px-4 transition-colors text-gray-800 text-center break-keep flex items-center justify-center">
+                <span class="text-lg md:text-xl font-medium">2. 그렇지 않다</span>
+            </button>
+            <button onclick="selectAnswer(3)"
+                class="w-full bg-gray-50 hover:bg-blue-50 border-2 border-gray-200 hover:border-ansan rounded-xl py-4 px-4 transition-colors text-gray-800 text-center break-keep flex items-center justify-center">
+                <span class="text-lg md:text-xl font-medium">3. 보통이다</span>
+            </button>
+            <button onclick="selectAnswer(4)"
+                class="w-full bg-gray-50 hover:bg-blue-50 border-2 border-gray-200 hover:border-ansan rounded-xl py-4 px-4 transition-colors text-gray-800 text-center break-keep flex items-center justify-center">
+                <span class="text-lg md:text-xl font-medium">4. 그렇다</span>
+            </button>
+            <button onclick="selectAnswer(5)"
+                class="w-full bg-gray-50 hover:bg-blue-50 border-2 border-gray-200 hover:border-ansan rounded-xl py-4 px-4 transition-colors text-gray-800 text-center break-keep flex items-center justify-center">
+                <span class="text-lg md:text-xl font-medium">5. 매우 그렇다</span>
+            </button>
         </div>
 
         <!-- 이전 문항으로 가기 (첫 질문에서는 숨김) -->
@@ -179,33 +184,33 @@
     <script>
         const questions = [
             // 1. AI 지식
-            { section: "AI 지식", text: "1. 인공지능이 데이터를 학습하여 스스로 판단할 수 있음을 알고 있다." },
-            { section: "AI 지식", text: "2. 챗GPT와 일반 검색 서비스(네이버 등)의 차이점을 알고 있다." },
-            { section: "AI 지식", text: "3. AI가 때로는 틀린 정보를 진짜처럼 말할 수 있음(할루시네이션)을 안다." },
-            { section: "AI 지식", text: "4. 내 스마트폰 앱들 속에 이미 AI 기술이 들어있음을 인지한다." },
+            { section: "AI 지식", text: "1. 인공지능(AI)의 원리를 안다. " },
+            { section: "AI 지식", text: "2. 인공지능과 일반 검색 서비스(네이버 등)의 차이점을 알고 있다." },
+            { section: "AI 지식", text: "3. 인공지능이 때로는 틀린 정보를 진짜처럼 말할 수 있다는 사실을 알고 있다." },
+            { section: "AI 지식", text: "4. 내 스마트폰 앱들 속에 이미 인공지능 기술이 들어있음을 인지한다." },
 
             // 2. AI 활용
             { section: "AI 활용", text: "5. 스마트폰 음성 비서(빅스비, 시리 등)를 일상에서 사용한다." },
-            { section: "AI 활용", text: "6. 챗GPT 같은 AI에게 궁금한 것을 물어보고 답을 얻을 수 있다." },
+            { section: "AI 활용", text: "6. 챗GPT같은 AI에게 궁금한 것을 물어보고 답을 얻을 수 있다." },
             { section: "AI 활용", text: "7. 번역 앱이나 길 찾기 앱을 혼자서 충분히 조작할 수 있다." },
             { section: "AI 활용", text: "8. AI를 이용해 사진을 꾸미거나 영상을 만들어보고 싶다." },
 
             // 3. 비판적 사고
-            { section: "비판적 사고", text: "9. 인터넷 뉴스가 AI가 만든 가짜(딥페이크)인지 의심해 본 적이 있다." },
+            { section: "비판적 사고", text: "9. 인터넷 뉴스가 AI가 만든 가짜 뉴스인지 의심해 본 적이 있다." },
             { section: "비판적 사고", text: "10. 유튜브 등의 영상 추천이 내 과거 기록을 분석한 AI의 결과임을 안다." },
             { section: "비판적 사고", text: "11. AI의 답변이 특정 방향으로 편향되거나 차별적일 수 있음을 인지한다." },
             { section: "비판적 사고", text: "12. AI가 알려준 정보의 사실 여부를 주변이나 다른 곳에서 확인하려 노력한다." },
 
             // 4. 윤리/보안
-            { section: "윤리/보안", text: "13. AI 서비스에 내 개인정보나 비밀번호를 입력할 때 주의해야 함을 안다." },
-            { section: "윤리/보안", text: "14. AI가 만든 그림이나 글에도 저작권 문제가 있을 수 있음을 인지한다." },
+            { section: "윤리/보안", text: "13. AI 서비스에 내 개인정보나 비밀번호를 입력할 때 주의해야 함을 알고 있다." },
+            { section: "윤리/보안", text: "14. AI가 만든 그림이나 글에도 저작권 문제가 있을 수 있음을 알고 있다." },
             { section: "윤리/보안", text: "15. AI 기술을 악용한 신종 보이스피싱 수법에 대해 들어본 적이 있다." },
-            { section: "윤리/보안", text: "16. AI 기술이 앞으로 사람들의 일자리에 영향을 줄 수 있음을 고려한다." },
+            { section: "윤리/보안", text: "16. AI 기술이 앞으로 사람들의 일자리에 영향을 줄 수 있음을 알고 있다." },
 
             // 5. 태도/학습
-            { section: "태도/학습", text: "17. AI 기술을 조금 더 배우면 내 삶이 훨씬 편리해질 것이라 믿는다." },
+            { section: "태도/학습", text: "17. AI 기술을 조금 더 배우면 내 삶이 훨씬 편리해질 것이라 생각한다." },
             { section: "태도/학습", text: "18. 새로운 AI 나 기계가 나오면 거부감보다는 호기심이 생긴다." },
-            { section: "태도/학습", text: "19. 안산시 평생학습관에서 열리는 AI 교육에 적극적으로 참여할 의사가 있다." },
+            { section: "태도/학습", text: "19. 안산시 평생학습관에서 열리는 AI 교육에 참여할 생각이 있다." },
             { section: "태도/학습", text: "20. 내가 배운 AI 활용법을 주변 친구나 가족에게 알려주고 싶다." }
         ];
 
